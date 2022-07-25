@@ -3,8 +3,9 @@ package com.example.tiptime
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tiptime.databinding.ActivityMainBinding
+import java.text.NumberFormat
+import java.util.*
 import kotlin.math.ceil
-import java.text.NumberFormat as NumberFormat1
 
 
 class MainActivity : AppCompatActivity() {
@@ -40,7 +41,8 @@ class MainActivity : AppCompatActivity() {
             tip = ceil(tip)
         }
 
-        val formattedTip = NumberFormat1.getCurrencyInstance().format(tip)
+        val formattedTip = NumberFormat.getCurrencyInstance().format(tip)
+
         binding.tipResult.text = getString(R.string.tip_amount, formattedTip)
     }
 
